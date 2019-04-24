@@ -10,8 +10,8 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
       {todo.text}
 
       <div>
-        <button onClick={() => completeTodo(index)}>Complete</button>
-        <button onClick={() => removeTodo(index)}>x</button>
+        <button class="btn btn-success" onClick={() => completeTodo(index)}>Complete</button>
+        <button class="btn btn-danger" onClick={() => removeTodo(index)}>x</button>
       </div>
     </div>
   );
@@ -28,14 +28,17 @@ function TodoForm({ addTodo }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="input"
-        value={value}
-        onChange={e => setValue(e.target.value)}
-      />
-    </form>
+    <div className="input-field">
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          className="input"
+          placeholder="Enter the task"
+          value={value}
+          onChange={e => setValue(e.target.value)}
+        />
+      </form>
+    </div>
   );
 }
 
@@ -74,17 +77,24 @@ function App() {
 
   return (
     <div className="app">
-      <div className="todo-list">
-        {todos.map((todo, index) => (
-          <Todo
-            key={index}
-            index={index}
-            todo={todo}
-            completeTodo={completeTodo}
-            removeTodo={removeTodo}
-          />
-        ))}
-        <TodoForm addTodo={addTodo} />
+      <div className="container">
+        <div className="header">
+          <h2>
+            React Hooks To Do Application
+          </h2>
+        </div>
+        <div className="todo-list">
+          <TodoForm addTodo={addTodo} />
+          {todos.map((todo, index) => (
+            <Todo
+              key={index}
+              index={index}
+              todo={todo}
+              completeTodo={completeTodo}
+              removeTodo={removeTodo}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

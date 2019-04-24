@@ -4,23 +4,38 @@
   height: 100vh;
 }
 
+.header {
+  background: #e8e8e8;
+  /* height: 80px; */
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 .todo-list {
   background: #e8e8e8;
   border-radius: 4px;
   padding: 5px;
-  max-width: 400px;
+  /* max-width: 400px; */
 }
 
-
+.input-field  input {
+    width: 100%;
+}
 
 .todo {
   background: #fff;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   padding: 3px 10px;
-  font-size: 12px;
-  margin-bottom: 6px;
+  font-size: 14px;
+  margin-top: 6px;
   border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.btn {
+  margin-right: 5px;
 }
